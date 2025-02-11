@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package meshtastic;
+
+message CrisislabCommand {
+	enum CrisislabCommandType {
+		SET_BROADCAST_INTERVAL = 0;
+	}
+
+	CrisislabCommandType type = 1;
+
+	oneof payload {
+		uint32 broadcast_interval = 2;
+	}
+}
