@@ -2,14 +2,17 @@ syntax = "proto3";
 
 package meshtastic;
 
-message CrisislabCommand {
-	enum Type {
-		SET_BROADCAST_INTERVAL = 0;
+import "nanopb.proto";
+
+message CrisislabMessage {
+	oneof message {
+		Command command = 1;
 	}
 
-	Type type = 1;
-
-	oneof payload {
-		uint32 broadcast_interval_seconds = 2;
+	message Command {
+		oneof payload {
+			uint32 broadcast_interval_seconds = 2;
+			string channel_name = 3 [(nanopb).max_length = 12];
+		}
 	}
 }
