@@ -6,13 +6,7 @@ import "nanopb.proto";
 
 message CrisislabMessage {
 	oneof message {
-		Command command = 1;
-	}
-
-	message Command {
-		oneof payload {
-			uint32 broadcast_interval_seconds = 2;
-			string channel_name = 3 [(nanopb).max_length = 12];
-		}
+		uint32 set_broadcast_interval_seconds = 1;
+		string set_channel_name = 2 [(nanopb).max_length = 12];
 	}
 }
