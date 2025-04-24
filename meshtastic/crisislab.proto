@@ -7,6 +7,6 @@ import "nanopb.proto";
 message CrisislabMessage {
 	oneof message {
 		uint32 broadcast_interval_seconds = 1;
-		string channel_name = 2 [(nanopb).max_length = 12];
+		string channel_name = 2 [(nanopb).max_length = 11];
 	}
 }
