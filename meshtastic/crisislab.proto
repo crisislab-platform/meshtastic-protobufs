@@ -5,8 +5,11 @@ package meshtastic;
 import "nanopb.proto";
 
 message CrisislabMessage {
+	message Empty {}
+
 	oneof message {
 		uint32 broadcast_interval_seconds = 1;
 		string channel_name = 2 [(nanopb).max_length = 11];
+		Empty update_routes = 3;
 	}
 }
