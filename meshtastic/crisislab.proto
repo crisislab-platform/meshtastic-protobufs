@@ -7,10 +7,21 @@ import "nanopb.proto";
 message CrisislabMessage {
 	message Empty {}
 
+	message RawSignalData {
+		int32 rssi = 1;
+		float snr = 2;
+	}
+
+	message SignalDataFrom {
+		uint32 receiving_node_id = 1;
+		map<uint32, RawSignalData> map = 2;
+	}
+
 	oneof message {
 		uint32 broadcast_interval_seconds = 1;
 		string channel_name = 2 [(nanopb).max_length = 11];
 		Empty update_routes = 3;
 		uint64 ping_timestamp = 4;
+		SignalDataFrom signal_data = 5;
 	}
 }
