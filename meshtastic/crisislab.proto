@@ -7,14 +7,16 @@ import "nanopb.proto";
 message CrisislabMessage {
 	message Empty {}
 
-	message RawSignalData {
-		int32 rssi = 1;
-		float snr = 2;
-	}
+	message SignalData {
+		message Entry {
+			uint32 sending_node_id = 1;
+			int32 rssi = 2;
+			float snr = 3;
+		}
 
-	message SignalDataFrom {
 		uint32 receiving_node_id = 1;
-		map<uint32, RawSignalData> map = 2;
+
+		repeated Entry signal_entries = 2 [(nanopb).max_count = 10];
 	}
 
 	oneof message {
@@ -22,6 +24,6 @@ message CrisislabMessage {
 		string channel_name = 2 [(nanopb).max_length = 11];
 		Empty update_routes = 3;
 		uint64 ping_timestamp = 4;
-		SignalDataFrom signal_data = 5;
+		SignalData signal_data = 5;
 	}
 }
