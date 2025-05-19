@@ -1,0 +1,2 @@
+CrisislabMessage.SignalData.links		max_count:10
+CrisislabMessage.message.channel_name	max_length:11

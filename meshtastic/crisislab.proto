@@ -9,19 +9,19 @@ message CrisislabMessage {
 
 	message SignalData {
 		message Entry {
-			uint32 sending_node_id = 1;
+			uint32 from = 1; // node id
 			int32 rssi = 2;
 			float snr = 3;
 		}
 
-		uint32 receiving_node_id = 1;
-
-		repeated Entry signal_entries = 2 [(nanopb).max_count = 10];
+		uint32 to = 1; // node id
+		bool is_gateway = 2;
+		repeated Entry links = 3;
 	}
 
 	oneof message {
 		uint32 broadcast_interval_seconds = 1;
-		string channel_name = 2 [(nanopb).max_length = 11];
+		string channel_name = 2;
 		Empty update_routes = 3;
 		uint64 ping_timestamp = 4;
 		SignalData signal_data = 5;
