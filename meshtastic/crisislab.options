@@ -1,2 +1,2 @@
-CrisislabMessage.SignalData.links		max_count:10
-CrisislabMessage.message.channel_name	max_length:11
+meshtastic.CrisislabMessage.SignalData.links 	max_count:10
+meshtastic.CrisislabMessage.channel_name 		max_length:11
