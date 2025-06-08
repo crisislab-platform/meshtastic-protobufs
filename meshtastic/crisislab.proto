@@ -40,12 +40,12 @@ message CrisislabMessage {
 			repeated Route routes = 1;
 		}
 
-		map<uint32, RoutesList> entries = 6;
+		map<uint32, RoutesList> entries = 1;
 	}
 
 	message LiveData {
 		uint32 node_num = 1;
-		uint64 timestamp = 2; // seconds since epoch
+		uint64 timestamp = 2; // seconds since unix epoch
 		User user = 3;
 		Position position = 4;
 		DeviceMetrics device_metrics = 5;

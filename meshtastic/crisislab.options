@@ -1,2 +1,5 @@
 meshtastic.CrisislabMessage.SignalData.links 				max_count:10
 meshtastic.CrisislabMessage.MeshSettings.channel_name 		max_length:11
+meshtastic.CrisislabMessage.RoutesMap.Route.node_ids		max_count:10
+meshtastic.CrisislabMessage.RoutesMap.RoutesList.routes		max_count:15
+meshtastic.CrisislabMessage.RoutesMap.entries				max_count:50
