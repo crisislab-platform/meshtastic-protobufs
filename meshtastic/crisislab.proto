@@ -6,6 +6,8 @@ import "nanopb.proto";
 import "meshtastic/mesh.proto";
 import "meshtastic/telemetry.proto";
 
+option (nanopb_fileopt).include = "<map>";
+
 message CrisislabMessage {
 	message SignalData {
 		message Entry {
@@ -31,15 +33,15 @@ message CrisislabMessage {
 
 	message Empty {}
 
+	message Route {
+		repeated uint32 node_ids = 1;
+	}
+
+	message RoutesList {
+		repeated Route routes = 1;
+	}
+
 	message RoutesMap {
-		message Route {
-			repeated uint32 node_ids = 1;
-		}
-
-		message RoutesList {
-			repeated Route routes = 1;
-		}
-
 		map<uint32, RoutesList> entries = 1;
 	}
 
