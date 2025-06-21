@@ -6,8 +6,6 @@ import "nanopb.proto";
 import "meshtastic/mesh.proto";
 import "meshtastic/telemetry.proto";
 
-option (nanopb_fileopt).include = "<map>";
-
 message CrisislabMessage {
 	message SignalData {
 		message Entry {
