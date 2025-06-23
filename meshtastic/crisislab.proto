@@ -31,16 +31,12 @@ message CrisislabMessage {
 
 	message Empty {}
 
-	message Route {
+	message NextHops {
 		repeated uint32 node_ids = 1;
 	}
 
-	message RoutesList {
-		repeated Route routes = 1;
-	}
-
-	message RoutesMap {
-		map<uint32, RoutesList> entries = 1;
+	message NextHopsMap {
+		map<uint32, NextHops> entries = 1;
 	}
 
 	message LiveData {
@@ -54,10 +50,10 @@ message CrisislabMessage {
 	oneof message {
 		MeshSettings mesh_settings = 1;
 		ServerSettings server_settings = 2;
-		Empty update_routes_request = 3;
+		Empty update_next_hops_request = 3;
 		uint64 ping_timestamp = 4; // seconds since unix epoch
 		SignalData signal_data = 5;
-		RoutesMap updated_routes = 6;
+		NextHopsMap updated_next_hops = 6;
 		LiveData live_data = 7;
 	}
 }
