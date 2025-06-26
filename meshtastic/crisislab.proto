@@ -54,6 +54,8 @@ message CrisislabMessage {
 		uint64 ping_timestamp = 4; // seconds since unix epoch
 		SignalData signal_data = 5;
 		NextHopsMap updated_next_hops = 6;
-		LiveData live_data = 7;
+		Empty start_live_data = 7;
+		Empty stop_live_data = 8;
+		LiveData live_data = 9;
 	}
 }
