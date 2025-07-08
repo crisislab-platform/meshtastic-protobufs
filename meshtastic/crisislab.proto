@@ -49,13 +49,14 @@ message CrisislabMessage {
 
 	oneof message {
 		MeshSettings mesh_settings = 1;
-		ServerSettings server_settings = 2;
-		Empty update_next_hops_request = 3;
-		uint64 ping_timestamp = 4; // seconds since unix epoch
-		SignalData signal_data = 5;
-		NextHopsMap updated_next_hops = 6;
-		Empty start_live_data = 7;
-		Empty stop_live_data = 8;
-		LiveData live_data = 9;
+		Empty get_mesh_settings_request = 2;
+		ServerSettings server_settings = 3;
+		Empty update_next_hops_request = 4;
+		uint64 ping_timestamp = 5; // seconds since unix epoch
+		SignalData signal_data = 6;
+		NextHopsMap updated_next_hops = 7;
+		Empty start_live_data = 8;
+		Empty stop_live_data = 9;
+		LiveData live_data = 10;
 	}
 }
