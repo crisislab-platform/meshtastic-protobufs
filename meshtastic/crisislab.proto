@@ -52,7 +52,7 @@ message CrisislabMessage {
 		Empty get_mesh_settings_request = 2;
 		ServerSettings server_settings = 3;
 		Empty update_next_hops_request = 4;
-		uint64 ping_timestamp = 5; // seconds since unix epoch
+		Empty ping = 5;
 		SignalData signal_data = 6;
 		NextHopsMap updated_next_hops = 7;
 		Empty start_live_data = 8;
