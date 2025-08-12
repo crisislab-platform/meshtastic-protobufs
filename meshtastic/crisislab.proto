@@ -39,7 +39,7 @@ message CrisislabMessage {
 		map<uint32, NextHops> entries = 1;
 	}
 
-	message LiveData {
+	message Telemetry {
 		uint32 node_num = 1;
 		uint64 timestamp = 2; // seconds since unix epoch
 		User user = 3;
@@ -55,8 +55,9 @@ message CrisislabMessage {
 		Empty ping = 5;
 		SignalData signal_data = 6;
 		NextHopsMap updated_next_hops = 7;
-		Empty start_live_data = 8;
-		Empty stop_live_data = 9;
-		LiveData live_data = 10;
+		Empty start_live_telemetry = 8;
+		Empty stop_live_telemetry = 9;
+		Telemetry live_telemetry = 10;
+		uint32 get_ad_hoc_telemetry = 11;
 	}
 }
