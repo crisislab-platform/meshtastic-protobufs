@@ -57,7 +57,7 @@ message CrisislabMessage {
 		NextHopsMap updated_next_hops = 7;
 		Empty start_live_telemetry = 8;
 		Empty stop_live_telemetry = 9;
-		Telemetry live_telemetry = 10;
+		Telemetry telemetry = 10;
 		uint32 get_ad_hoc_telemetry = 11;
 	}
 }
