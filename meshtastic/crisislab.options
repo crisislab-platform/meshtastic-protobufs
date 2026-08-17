@@ -1,0 +1,4 @@
+meshtastic.CrisislabMessage.SignalData.links 				max_count:10
+meshtastic.CrisislabMessage.MeshSettings.channel_name 		max_length:11
+meshtastic.CrisislabMessage.NextHops.node_ids				max_count:16
+meshtastic.CrisislabMessage.NextHopsMap.entries				callback_datatype:"void*"
